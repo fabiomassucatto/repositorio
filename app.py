@@ -2,7 +2,7 @@ from modelos.restaurante import Restaurante
 
 restaurante_praca = Restaurante('praça', 'Gourmet')
 restaurante_praca.receber_avaliacao('Ana', 5)
-restaurante_praca.receber_avaliacao('Bia', 10)
+restaurante_praca.receber_avaliacao('Bia', 1)
 
 
 
