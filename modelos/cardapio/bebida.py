@@ -1,5 +1,5 @@
 from modelos.cardapio.Item_Cardapio import Item_Cardapio
-class Bebida:
+class Bebida(Item_Cardapio):
     def __init__(self, nome, preco, tamanho):
         super().__init__(nome, preco)
         self._tamanho = tamanho
