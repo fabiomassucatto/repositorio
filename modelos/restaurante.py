@@ -1,7 +1,6 @@
 from modelos.avaliacao import Avaliacao
 from modelos.cardapio.Item_Cardapio import Item_Cardapio
-from modelos.cardapio.prato import Prato
-from modelos.cardapio.bebida import Bebida
+
 class Restaurante:
     restaurantes = []
 
@@ -51,10 +50,10 @@ class Restaurante:
     @property
     def exibir_cardapio(self):
         print(f'Cardapio do restaurante {self._nome}:\n')
-        for i,item in enumerate(self._cardapio, start=1):
-            if hasattr(item,'descricao'):
-               mensagem_prato = f"{i} NOME {item._nome} | R$ {item._preco:.2f}" f"| DESCRICAO {item._descricao}"
-               print(mensagem_prato)
-        else:
-            mensagem_bebida = f"{i} NOME {item._nome} | R$ {item._preco:.2f}" f"| TAMANHO {item._tamanho}"
-        print(mensagem_bebida)
+        for i, item in enumerate(self._cardapio, start=1):
+            if hasattr(item, '_descricao'):
+                mensagem_prato = f"{i}. NOME {item._nome} | R$ {item._preco:.2f} | DESCRICAO {item._descricao}"
+                print(mensagem_prato)
+            elif hasattr(item, '_tamanho'):
+                mensagem_bebida = f"{i}. NOME {item._nome} | R$ {item._preco:.2f} | TAMANHO {item._tamanho}"
+                print(mensagem_bebida)
